@@ -273,5 +273,3 @@ These guides teach real-world tasks like:
 - Frontend integration
 
 ---
-
-If you want a **PDF version**, just say: *Create PDF*.

@@ -1,318 +1,410 @@
-🚀 **Spring Boot & Spring Core — Master Annotation Cheat Sheet**
+🚀 Spring Boot & Spring Core — Master Annotation Cheat Sheet
 ================================================================
 
-🔵 **1\. Spring Core Annotations**
+  
+
+🔵 1\. Spring Core Annotations
 ==================================
 
-### **@Component**
+ @Component
 
 Marks a class as a Spring-managed bean.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Component  public class EmailService {}   `
+    @Component
+    public class EmailService {}
+    
 
-### **@Service**
+ @Service
 
 Specialized @Component for service layer.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Service  public class OrderService {}   `
+    @Service
+    public class OrderService {}
+    
 
-### **@Repository**
+ @Repository
 
 DAO layer + translates DB exceptions.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Repository  public class UserRepository {}   `
+    @Repository
+    public class UserRepository {}
+    
 
-### **@Controller**
+ @Controller
 
 Used in MVC for web pages.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Controller  public class HomeController {}   `
+    @Controller
+    public class HomeController {}
+    
 
-### **@RestController**
+ @RestController
 
 \= @Controller + @ResponseBody
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @RestController  public class ApiController {}   `
+    @RestController
+    public class ApiController {}
+    
 
-### **@Configuration**
+ @Configuration
 
 Defines configuration classes.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Configuration  public class AppConfig {}   `
+    @Configuration
+    public class AppConfig {}
+    
 
-### **@Bean**
+ @Bean
 
 Registers custom beans.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Bean  public ModelMapper mapper() { return new ModelMapper(); }   `
+    @Bean
+    public ModelMapper mapper() { return new ModelMapper(); }
+    
 
-🧩 **2\. Dependency Injection Annotations**
+  
+
+🧩 2\. Dependency Injection Annotations
 ===========================================
 
-### **@Autowired**
+ @Autowired
 
 Injects bean automatically.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Autowired  private UserService service;   `
+    @Autowired
+    private UserService service;
+    
 
-### **@Qualifier**
+ @Qualifier
 
 When multiple beans of same type exist.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Autowired  @Qualifier("emailService")  private NotificationService notif;   `
+    @Autowired
+    @Qualifier("emailService")
+    private NotificationService notif;
+    
 
-### **@Value**
+ @Value
 
 Inject properties.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Value("${app.name}")  private String appName;   `
+    @Value("${app.name}")
+    private String appName;
+    
 
-### **@Lazy**
+ @Lazy
 
 Creates bean lazily.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Lazy  @Autowired  private PaymentService service;   `
+    @Lazy
+    @Autowired
+    private PaymentService service;
+    
 
-📦 **3\. Spring Boot Annotations**
+  
+
+📦 3\. Spring Boot Annotations
 ==================================
 
-### **@SpringBootApplication**
+ @SpringBootApplication
 
 Combines:
 
-*   @Configuration
-    
-*   @EnableAutoConfiguration
-    
-*   @ComponentScan
+   @Configuration
+   @EnableAutoConfiguration
+   @ComponentScan
+
+    @SpringBootApplication
+    public class MyApp {}
     
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @SpringBootApplication  public class MyApp {}   `
-
-### **@EnableAutoConfiguration**
+ @EnableAutoConfiguration
 
 Enables Spring Boot auto config.
 
-### **@ComponentScan**
+ @ComponentScan
 
 Tells Spring where to scan for beans.
 
-🌐 **4\. REST Controller & Web Annotations**
+  
+
+🌐 4\. REST Controller & Web Annotations
 ============================================
 
-### **@GetMapping / @PostMapping / @PutMapping / @DeleteMapping / @PatchMapping**
+ @GetMapping / @PostMapping / @PutMapping / @DeleteMapping / @PatchMapping
 
 Shortcut HTTP mappings.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @GetMapping("/users")  public List getUsers() {}   `
+    @GetMapping("/users")
+    public List<User> getUsers() {}
+    
 
-### **@RequestMapping**
+ @RequestMapping
 
 Base route.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @RequestMapping("/api")   `
+    @RequestMapping("/api")
+    
 
-### **@PathVariable**
+ @PathVariable
 
 Read dynamic values from URL.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @GetMapping("/user/{id}")  public User get(@PathVariable int id) {}   `
+    @GetMapping("/user/{id}")
+    public User get(@PathVariable int id) {}
+    
 
-### **@RequestParam**
+ @RequestParam
 
 Query parameters.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @GetMapping("/search")  public String s(@RequestParam String q) {}   `
+    @GetMapping("/search")
+    public String s(@RequestParam String q) {}
+    
 
-### **@RequestBody**
+ @RequestBody
 
 Read JSON body.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @PostMapping("/add")  public User add(@RequestBody User u) {}   `
+    @PostMapping("/add")
+    public User add(@RequestBody User u) {}
+    
 
-### **@ResponseStatus**
+ @ResponseStatus
 
 Specify status code.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @ResponseStatus(HttpStatus.CREATED)   `
+    @ResponseStatus(HttpStatus.CREATED)
+    
 
-### **@CrossOrigin**
+ @CrossOrigin
 
 Enable CORS.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @CrossOrigin("*")   `
+    @CrossOrigin("")
+    
 
-🗄️ **5\. JPA & Hibernate Annotations**
+  
+
+🗄️ 5\. JPA & Hibernate Annotations
 =======================================
 
-### **@Entity**
+ @Entity
 
 Marks class as database table.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Entity  public class User {}   `
+    @Entity
+    public class User {}
+    
 
-### **@Table(name = "users")**
+ @Table(name = "users")
 
 Specifies table name.
 
-### **@Id**
+ @Id
 
 Primary key.
 
-### **@GeneratedValue**
+ @GeneratedValue
 
 Auto-increment strategy.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)  private Long id;   `
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
 
-### **@Column**
+ @Column
 
 Customize column.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Column(nullable=false, unique=true)   `
+    @Column(nullable=false, unique=true)
+    
 
-### **@OneToOne / @OneToMany / @ManyToOne / @ManyToMany**
+ @OneToOne / @OneToMany / @ManyToOne / @ManyToMany
 
 Relationship mappings.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @OneToMany(mappedBy="user")  private List orders;   `
+    @OneToMany(mappedBy="user")
+    private List<Order> orders;
+    
 
-### **@JoinColumn**
+ @JoinColumn
 
 Foreign key.
 
-🛡️ **6\. Spring Security Annotations**
+  
+
+🛡️ 6\. Spring Security Annotations
 =======================================
 
-### **@EnableWebSecurity**
+ @EnableWebSecurity
 
 Enables Spring Security.
 
-### **@Configuration + @Bean** (Security Filter Chain)
+ @Configuration + @Bean (Security Filter Chain)
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Bean  SecurityFilterChain security(HttpSecurity http) throws Exception {}   `
+    @Bean
+    SecurityFilterChain security(HttpSecurity http) throws Exception {}
+    
 
-### **@PreAuthorize**
+ @PreAuthorize
 
 Method-level security.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @PreAuthorize("hasRole('ADMIN')")   `
+    @PreAuthorize("hasRole('ADMIN')")
+    
 
-### **@Secured**
+ @Secured
 
 Another method-level role check.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Secured("ROLE_ADMIN")   `
+    @Secured("ROLEADMIN")
+    
 
-### **@AuthenticationPrincipal**
+ @AuthenticationPrincipal
 
 Inject logged-in user.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   public String home(@AuthenticationPrincipal User user)   `
+    public String home(@AuthenticationPrincipal User user)
+    
 
-📦 **7\. Validation Annotations (Jakarta Validation)**
+  
+
+📦 7\. Validation Annotations (Jakarta Validation)
 ======================================================
 
-### **@NotNull / @NotBlank / @NotEmpty**
+ @NotNull / @NotBlank / @NotEmpty
 
 Validation on fields.
 
-### **@Email**
+ @Email
 
 Valid email.
 
-### **@Size(min, max)**
+ @Size(min, max)
 
-### **@Min / @Max**
+ @Min / @Max
 
-### **@Past / @Future**
+ @Past / @Future
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @NotBlank  private String name;  @Email  private String email;   `
+    @NotBlank
+    private String name;
+    
+    @Email
+    private String email;
+    
 
-### **@Valid**
+ @Valid
 
 Validate nested objects.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   public Response create(@Valid @RequestBody UserDto dto)   `
+    public Response create(@Valid @RequestBody UserDto dto)
+    
 
-🔁 **8\. Spring AOP Annotations**
+  
+
+🔁 8\. Spring AOP Annotations
 =================================
 
-### **@Aspect**
+ @Aspect
 
 Marks class as AOP aspect.
 
-### **@Before / @After / @Around**
+ @Before / @After / @Around
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Before("execution(* com.app.service.*.*(..))")  public void log() {}   `
+    @Before("execution( com.app.service..(..))")
+    public void log() {}
+    
 
-🧪 **9\. Testing Annotations**
+  
+
+🧪 9\. Testing Annotations
 ==============================
 
-### **@SpringBootTest**
+ @SpringBootTest
 
 Loads full context.
 
-### **@WebMvcTest**
+ @WebMvcTest
 
 Loads MVC layer only.
 
-### **@MockBean**
+ @MockBean
 
 Creates mock for dependency.
 
-### **@Test**
+ @Test
 
 JUnit test.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @SpringBootTest  class AppTest { }   `
+    @SpringBootTest
+    class AppTest { }
+    
 
-🏗️ **10\. Lombok Annotations (Optional)**
+  
+
+🏗️ 10\. Lombok Annotations (Optional)
 ==========================================
 
-### **@Getter, @Setter**
+ @Getter, @Setter
 
-### **@AllArgsConstructor, @NoArgsConstructor**
+ @AllArgsConstructor, @NoArgsConstructor
 
-### **@Builder**
+ @Builder
 
-### **@Data**
+ @Data
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Data  public class UserDTO {}   `
+    @Data
+    public class UserDTO {}
+    
 
-⚙️ **11\. Spring Boot Configuration Properties**
+  
+
+⚙️ 11\. Spring Boot Configuration Properties
 ================================================
 
-### **@ConfigurationProperties(prefix = "app")**
+ @ConfigurationProperties(prefix = "app")
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @ConfigurationProperties(prefix = "app")  public class AppProps { private String name; }   `
+    @ConfigurationProperties(prefix = "app")
+    public class AppProps { private String name; }
+    
 
-### **@EnableConfigurationProperties**
+ @EnableConfigurationProperties
 
 Enable custom config binding.
 
-🧵 **12\. Scheduling & Async**
+  
+
+🧵 12\. Scheduling & Async
 ==============================
 
-### **@EnableScheduling**
+ @EnableScheduling
 
 Enable scheduler.
 
-### **@Scheduled**
+ @Scheduled
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Scheduled(fixedRate = 5000)  public void runTask() {}   `
+    @Scheduled(fixedRate = 5000)
+    public void runTask() {}
+    
 
-### **@Async**
+ @Async
 
 Run in parallel thread.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Async  public void sendEmail() {}   `
+    @Async
+    public void sendEmail() {}
+    
 
-🎯 **13\. Transaction Management**
+  
+
+🎯 13\. Transaction Management
 ==================================
 
-### **@Transactional**
+ @Transactional
 
 Wraps method in transaction.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   @Transactional  public void saveOrder() {}   `
+    @Transactional
+    public void saveOrder() {}
